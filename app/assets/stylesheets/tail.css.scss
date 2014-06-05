@@ -1,0 +1,34 @@
+@include keyframes(wag) {
+  20% {
+    @include transform(translateX(3px));
+    @include transform(translateY(3px));
+  }
+  50% {
+    @include transform(translateX(1px));
+    @include transform(translateY(1px));
+  }
+  75% {
+    @include transform(translateX(3px));
+    @include transform(translateY(3px));
+  }
+  100% {
+    @include transform(translateX(0px));
+    @include transform(translateY(0px));
+  }
+}
+
+#tail {
+  @include animation(wag 3.0s $ease-in-out-expo infinite);
+}
+
+#carpace-1 {
+ @include animation(wag 3.0s 2.0s $ease-in-out-expo infinite);
+}
+
+#carpace-2 {
+  @include animation(wag 3.0s 1.3s $ease-in-out-expo infinite);
+}
+
+#carpace-3 {
+  @include animation(wag 3.0s .4s $ease-in-out-expo infinite);
+}

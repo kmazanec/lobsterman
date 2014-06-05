@@ -1,0 +1,40 @@
+@include keyframes(wobble) {
+  20% {
+    @include transform(translateY(2px));
+    @include transform(translateX(-3px));
+  }
+  40% {
+    @include transform(translateX(1px));
+    @include transform(translateY(3px));
+  }
+  60% {
+    @include transform(translateY(-1px));
+  }
+  80% {
+    @include transform(translateX(3px));
+  }
+  100% {
+    @include transform(translateX(0px));
+    @include transform(translateY(0px));
+  }
+}
+
+@include keyframes(blink) {
+  0% {
+    fill: #fff;
+  }
+  99% {
+    fill: #fff;
+  }
+  100% {
+    fill: #000;
+  }
+}
+
+.eye-ball {
+  @include animation(blink 10.0s ease-in infinite);
+}
+
+.pupil {
+  @include animation(wobble 6.0s ease-in infinite);
+}
